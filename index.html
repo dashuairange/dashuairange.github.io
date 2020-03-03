@@ -14,51 +14,28 @@
 
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
-		<script type="text/javascript" src="js/jquery.js">
-		</script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 	</head>
-
 	<body>
-		<h2>使用说明书</h2> 请输入姓名:
-		<input type="text" name="" id="inname" value="" />
-		<button id="sub">提交</button>
-		<h1 id='show'></h1>
-
-		<script>
-			var arr01 = [
-				'是元气和灵感的吉祥物',
-				'是糖和香料组成的淘气包',
-				'是逛吃逛吃的骨灰级吃货',
-				'是你永远得不到的爸爸',
-				'是西湖的水',
-				'是走位风骚的舔包怪',
-				'发际线堪忧的程序dog',
-				'想要锡纸烫但是发量不够的渣男'
-			];
-			var arr02 = [
-				'请给与他足够的睡眠时间',
-				'请放养',
-				'请珍惜他的制杖',
-				'请多投喂',
-				'请时常揍他，谢谢',
-				'请督促他相亲',
-				'请红烧'
-			];
-			var str;
-			var a;
-			var b;
-
-			$('#sub').click(function() {
-				a = Math.floor(Math.random() * arr01.length);
-				b = Math.floor(Math.random() * arr02.length);
-				str = $('#inname').val() + arr01[a] + '，' + arr02[b] + '!!!';
-				$('#show').html(str);
-			});
+		<div id="box">
+			<button @click="oc(bb)" v-for="(aa,bb) in arr">{{aa}}</button>
+		</div>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#box',
+				data: {
+					arr:['aaa','bbb','ccc','ddd','eee'],
+				},
+				methods:{
+					oc:function(a){
+						alert(a);
+					}
+				}
+			})
 		</script>
 	</body>
-
 </html>
