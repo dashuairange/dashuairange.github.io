@@ -14,42 +14,51 @@
 
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8" />
 		<title></title>
-		<style>
-			#div1{
-				width: 180px;
-				height: 400px;
-				background-color: #61d1e7;
-				text-align: center;
-				line-height: 180px;
-				font-size: 150px;
-				font-weight:900;
-				color: #0e6392;
-				border: 15px #0e6392 solid;
-				text-shadow: -2px 0px 0 white,
-							0px -2px 0 white,
-							2px 0px 0 white,
-							0px 2px 0 white;
-				margin: 0 auto;
-			}
-			#div2{
-				width: 210px;
-				height: 430px;
-				/*background-color: black;*/
-				border: 15px black solid;
-				/*line-height: 460px;*/
-				margin: 0 auto;
-			}
-		</style>
+		<script type="text/javascript" src="js/jquery.js">
+		</script>
 	</head>
+
 	<body>
-		<div id="div2">
-			<div id="div1">
-				冷
-				漠
-			</div>
-		</div>
+		<h2>使用说明书</h2> 请输入姓名:
+		<input type="text" name="" id="inname" value="" />
+		<button id="sub">提交</button>
+		<h1 id='show'></h1>
+
+		<script>
+			var arr01 = [
+				'是元气和灵感的吉祥物',
+				'是糖和香料组成的淘气包',
+				'是逛吃逛吃的骨灰级吃货',
+				'是你永远得不到的爸爸',
+				'是西湖的水',
+				'是走位风骚的舔包怪',
+				'发际线堪忧的程序dog',
+				'想要锡纸烫但是发量不够的渣男'
+			];
+			var arr02 = [
+				'请给与他足够的睡眠时间',
+				'请放养',
+				'请珍惜他的制杖',
+				'请多投喂',
+				'请时常揍他，谢谢',
+				'请督促他相亲',
+				'请红烧'
+			];
+			var str;
+			var a;
+			var b;
+
+			$('#sub').click(function() {
+				a = Math.floor(Math.random() * arr01.length);
+				b = Math.floor(Math.random() * arr02.length);
+				str = $('#inname').val() + arr01[a] + '，' + arr02[b] + '!!!';
+				$('#show').html(str);
+			});
+		</script>
 	</body>
+
 </html>
