@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+		<script src="js/vue.js"></script>
 		<style type="text/css">
 			body {
 				background: url("img/bgimg.jpg");
@@ -33,7 +33,7 @@
 			}
 			
 			#search_option {
-				height: 46px;
+				height: 47px;
 				width: 80px;
 				position: relative;
 				/*top: 50%;
@@ -43,10 +43,12 @@
 				/*background-color: rgba(255,255,255,0.8);*/
 				/*opacity: 0.8;*/
 				margin: 0;
+				top: 50%;
+				transform: translateY(-50%);
 			}
 			
 			#search_option_ul {
-				height: 46px;
+				height: 47px;
 				width: 80px;
 				margin: 0;
 				padding: 0;
@@ -61,9 +63,9 @@
 			
 			li {
 				text-align: center;
-				line-height: 46px;
+				line-height: 47px;
 				color: #317ef3;
-				background-color: rgba(255, 255, 255, 0.9);
+				background-color: rgba(255, 255, 255, 0.8);
 				/*opacity: 0.8;*/
 			}
 			
@@ -108,7 +110,8 @@
 			}
 			
 			#search_button {
-				width: 80px;
+				position: relative;
+				width: 75px;
 				height: 46px;
 				border: 0px;
 				padding: 13px 8px;
@@ -116,6 +119,7 @@
 				background: blue;
 				color: #FFF;
 				cursor: pointer;
+				right: 5px;
 			}
 		</style>
 	</head>
