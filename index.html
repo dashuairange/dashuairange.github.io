@@ -3,7 +3,6 @@
 
 	<head>
 		<meta charset="utf-8">
-		<link rel="icon" type="image/x-icon" href="/img/icon.png" />
 		<title></title>
 		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
 		<style type="text/css">
@@ -90,14 +89,14 @@
 				height: 18px;
 				border-left: none;
 				border-right: none;
-				border-bottom: 1px solid #ccc;
-				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #f4f4f4;
+				border-top: 1px solid #f4f4f4;
 				outline: 0;
 				/*border: 1px solid #ccc;*/
 				background: rgba(255, 255, 255, 0.2);
 				/*padding-left: 8px;*/
 				padding: 13px 8px;
-				font-weight: bold;
+				/*font-weight: bold;*/
 				/*border: 1px solid #ccc;*/
 				/*background: rgba(255,255,255,0.2);*/
 				color: #000000;
@@ -136,7 +135,7 @@
 
 				<div id="search_body">
 
-					<input type="url" id="search_text" v-on:keydown.enter="search" v-model="input_text" autocomplete="off" />
+					<input type="text" id="search_text" v-on:keydown.enter="search" v-model="input_text" autocomplete="off" />
 				</div>
 				<input type="button" id="search_button" value="搜索" v-on:click="search" />
 				<input v-show="false" />
@@ -201,11 +200,11 @@
 						//							window.location.href = this.input_text;
 						//							}else 
 						if(this.this_s == '谷歌') {
-							window.location.href = 'https://www.google.com/search?q=' + this.input_text;
+							window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(this.input_text);
 						} else if(this.this_s == '百度') {
-							window.location.href = 'https://www.baidu.com/s?wd=' + this.input_text;
+							window.location.href = 'https://www.baidu.com/s?wd=' + encodeURIComponent(this.input_text);
 						} else if(this.this_s == '必应') {
-							window.location.href = 'https://www.bing.com/search?q=' + this.input_text;
+							window.location.href = 'https://www.bing.com/search?q=' + encodeURIComponent(this.input_text);
 						}
 					}
 				}
